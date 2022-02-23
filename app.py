@@ -9,7 +9,7 @@ import pickle
 import pandas as pd
 import re
 from flask import Flask, request, render_template
-import main
+import model
 from __main__ import *
 
 
@@ -28,7 +28,7 @@ def my_form_post():
     text = re.sub(' +', ' ',text.strip())
     #text=re.sub(strip_special_chars, "", text.lower())
 
-    refine_recom = main.recom_printer(text)
+    refine_recom = model.recom_printer(text)
     
     return refine_recom
 
